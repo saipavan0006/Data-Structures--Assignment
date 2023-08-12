@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdbool.h>
+int main() 
+{
+    char input[100];
+    printf("Enter a string: ");
+    scanf("%s", input);
+    int charCount[256] = {0}; 
+     for (int i = 0; input[i] != '\0'; i++)
+ {
+ charCount[input[i]]++;
+  }
+  bool foundRepeated = false;
+    for (int i = 0; input[i] != '\0'; i++) {
+        if (charCount[input[i]] > 1) {
+            printf("Character '%c' is repeated at indices:", input[i]);
+            for (int j = 0; input[j] != '\0'; j++) {
+                if (input[j] == input[i]) {
+                    printf(" %d", j);
+                }
+            }
+            printf("\n");
+            charCount[input[i]] = 0;
+            foundRepeated = true;
+        }
+    }
+
+    if (!foundRepeated) {
+        printf("No repeated characters found.\n");
+    }
+
+    return 0;
+}
