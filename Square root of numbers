@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int n,sqroot;
+	printf("enter the perfect square number");
+	scanf("%d",&n);
+	sqroot =sqrt(n);
+	if(sqroot*sqroot==n)
+	{
+		printf("the square root of %d is %d",n,sqroot);
+	}
+	else
+	{
+		printf("the square root is not a perfect square");
+	}
+ getch();
+	return 0;
+}
